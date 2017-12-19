@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+
+    <div class="col-lg-6">
+        {% for img in post.itemimage_set.all %}
+            <div class="picture-page-img">
+                <img src="{{ img.image.url }}">
+            </div>
+        {% endfor %}
+    </div>
+
+    <div class="col-lg-6">
+        <h2>{{ post.name }}</h2>
+        <p>{{ post.description }}</p>
+        <span>{{ post.price }} NZD</span>
+    </div>
+</div>
+<div class="container"><hr class="style13"></div>
+<div class="container">
+    <h2>Comments</h2>
+    {% for com in comment%}
+    <div class="comment">
+        <div class="comment-user">
+            {{ com.user }} {{ com.created }}
+        </div>
+        <div class="comment-text">
+            {{ com.text }}
+        </div>
+    </div>
+    {% endfor %}
+    {% if user.username %}
+    <form class=" comment-form" action="" method="post">{% csrf_token %}
+        {{ comment_form }}
+        <button class="btn btn-default" type="submit">Sent</button>
+    </form>
+    {% else %}
+    <p>Login for writing a comment. <a href="{% url 'account_login' %}">Login</a></p>
+    {% endif %}
+</div>
+
+{% endblock %}

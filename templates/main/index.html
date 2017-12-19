@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="jumbotron">
+                <h1>Free lessons every week!</h1>
+                <p>Hurry up! Get free trail lesson...</p>
+                <p><a class="btn btn-primary btn-lg" href="{% url 'news:news' %}" role="button">Learn more</a></p>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 index-img">
+                <img src="{% static 'img/rick.jpg' %}" class="img-responsive center-block">
+            </div>
+            <div class="col-lg-4 index-img">
+                <img src="{% static 'img/rick.jpg' %}" class="img-responsive center-block">
+            </div>
+            <div class="col-lg-4 index-img">
+                <img src="{% static 'img/rick.jpg' %}" class="img-responsive center-block">
+            </div>
+        </div>
+    </div>
+{% endblock %}

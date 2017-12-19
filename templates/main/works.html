@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        {% for item in worksImg %}
+        <div class="col-lg-3">
+            <div class="thumbnail">
+                <a href="{% url 'main:details' item.item.id%}"><img src="{{ item.image.url }}"></a>
+                <div class="caption">
+                    <h3>{{ item.item.name }}</h3>
+                    <span>{{ item.item.price }} NZD</span>
+                    <p><a href="#" class="btn btn-primary" role="button">Buy</a> <a href="#" class="btn btn-default" role="button">Details</a></p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
