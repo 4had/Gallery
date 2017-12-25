@@ -43,6 +43,7 @@ class ItemImage(models.Model):
     item = models.ForeignKey(Item, on_delete=models.CASCADE)
     image = models.ImageField('Image', upload_to='')
     is_active = models.BooleanField(default=True)
+    category = models.ForeignKey(Category, default=0, on_delete=models.CASCADE)
 
     created = models.DateTimeField(auto_now_add=True, auto_now=False)
     updated = models.DateTimeField(auto_now_add=False, auto_now=True)

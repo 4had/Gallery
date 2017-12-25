@@ -12,14 +12,19 @@ from django.http import HttpResponseRedirect
 class Index(View):
 
     def get(self, request):
+        zooimg = ItemImage.objects.filter(category__category='zoo')
+        portrait = ItemImage.objects.filter(category__category='portrait')
+        bw_portraits = ItemImage.objects.filter(category__category='bw_portraits')
+        landscape = ItemImage.objects.filter(category__category='landscape')
+        flowers = ItemImage.objects.filter(category__category='flower')
         return render(request, 'main/index.html', locals())
 
 
-class Works(View):
-
-    def get(self, request):
-        worksImg = ItemImage.objects.all()
-        return render(request, 'main/works.html', locals())
+# class Zoo(View):
+#
+#     def get(self, request):
+#         worksImg = ItemImage.objects.all()
+#         return render(request, 'main/works.html', locals())
 
 
 class ItemAdd(CreateView):

@@ -4,7 +4,7 @@ from .models import *
 
 class ItemImageinline(admin.TabularInline):
     model = ItemImage
-    extra = 1
+    extra = 0
 
 
 class ItemAdmin(admin.ModelAdmin):
