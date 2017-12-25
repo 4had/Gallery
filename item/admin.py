@@ -21,7 +21,13 @@ class ItemImageAdmin(admin.ModelAdmin):
         model = ItemImage
 
 
+class CommentAdmin(admin.ModelAdmin):
+    list_display = [field.name for field in Comment._meta.fields]
+    class Meta:
+        model = Comment
+
 
 admin.site.register(Item, ItemAdmin)
 admin.site.register(ItemImage, ItemImageAdmin)
-admin.site.register(Comment)
+admin.site.register(Comment, CommentAdmin)
+admin.site.register(Category)

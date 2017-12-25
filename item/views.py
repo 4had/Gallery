@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import *
 from django.views.generic import View, ListView, DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
@@ -7,6 +7,7 @@ from django.conf import settings
 from django.core.files.storage import FileSystemStorage
 from django.urls import reverse_lazy
 from django.http import HttpResponseRedirect
+
 
 class Index(View):
 
@@ -30,7 +31,7 @@ class ItemAdd(CreateView):
 class Details(DetailView):
 
     def get(self, request, pk):
-        post = Item.objects.get(pk=pk)
+        post = get_object_or_404(Item, pk=pk)
         comment = Comment.objects.filter(post=post)
         comment_form = CommentForm()
         return render(request, 'main/picture_page.html', locals())
