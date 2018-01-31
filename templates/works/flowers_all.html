@@ -1,14 +1,13 @@
 {% extends 'base.html' %}
-{% load static %}
 
 {% block content %}
- <div id="portraits" class="container">
+<div id="flowers" class="container">
     <div class="row">
-        <div pause = 'hover' keyboard = true data-interval="10000" id="flowers-carousel" class="index-padding-10per carousel slide" data-ride="carousel">
+        <div pause = 'hover' keyboard = true data-interval="10000" id="flowers-carousel" class=" carousel slide" data-ride="carousel">
 
           <!-- Wrapper for slides -->
             <div class="carousel-inner" role="listbox">
-                {% for image in front %}
+                {% for image in object_list %}
                    {% if forloop.first %}
                     <div class="item active">
                         <img src="{{ image.image.url }}" class="img-responsive">

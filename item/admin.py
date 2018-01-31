@@ -10,13 +10,17 @@ class ItemImageinline(admin.TabularInline):
 class ItemAdmin(admin.ModelAdmin):
     list_display = [field.name for field in Item._meta.fields]
     inlines = [ItemImageinline]
+    ordering = ["-updated"]
+    search_fields = ["name"]
     class Meta:
         model = Item
 
 
+
 class ItemImageAdmin(admin.ModelAdmin):
     list_display = [field.name for field in ItemImage._meta.fields]
-
+    ordering = ["-updated"]
+    search_fields = ["category"]
     class Meta:
         model = ItemImage
 

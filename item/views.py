@@ -17,7 +17,24 @@ class Index(View):
         bw_portraits = ItemImage.objects.filter(category__category='bw_portraits')
         landscape = ItemImage.objects.filter(category__category='landscape')
         flowers = ItemImage.objects.filter(category__category='flower')
+        front = [flowers.reverse()[0], portrait.reverse()[0]]
+
         return render(request, 'main/index.html', locals())
+
+
+
+class LessonsView(View):
+
+    def get(self, request):
+        return render(request, 'main/lessons.html', locals())
+
+
+class AboutView(View):
+
+    def get(self, request):
+        return render(request, 'main/about.html', locals())
+
+
 
 
 # class Zoo(View):
@@ -58,4 +75,7 @@ class Details(DetailView):
 class CommentDelete(DeleteView):
     model = Comment
     success_url = reverse_lazy('main:works')
+
+
+
 

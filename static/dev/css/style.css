@@ -1,10 +1,16 @@
-body {
+html, body {
     background-color: black !important;
+    height: 100%;
+}
+
+#wrapper {
+    min-height: 100%;
 }
 
 /*header*/
 .header {
-    position: fixed;
+    text-align: center;
+
 }
 
 .header a, a:hover {
@@ -15,7 +21,7 @@ body {
 .nav-pills>li>a, .nav-pills>li{
     color: white;
     background-color: #000000 !important;
-    margin-right: 36px;
+    margin-right: 20px;
     font-size: 15px;
     text-align: center;
 }
@@ -67,7 +73,7 @@ body {
 }
 
 .index-img > img {
-    width: 70%; /* Длина фигуры */
+    width: 70%;
     border-radius: 50%;
     overflow: hidden;
 
@@ -110,6 +116,7 @@ hr.style13 {
     background-color: black;
     width: 100%;
     height: 10%;
+    margin-top: -40px;
 }
 
 
@@ -117,16 +124,6 @@ hr.style13 {
     float: right;
     list-style-type: none;
     padding-bottom: 10px;
-}
-
-#all, #zoo, #acrylic, #watercolor, #portraits {
-
-}
-
-.index-padding-10per {
-    min-height: 100%;
-    margin-bottom: 500px;
-    margin-top: auto;
 }
 
 .carousel-inner > .item > img,
@@ -150,6 +147,38 @@ hr.style13 {
 
 .mPS2id-highlight {
     display: none;
+}
+
+.carousel-inner>.item>a>img, .carousel-inner>.item>img {
+    border: 20px solid white;
+}
+
+
+/*Lessons part*/
+
+
+.lessons {
+    color: white;
+}
+
+.lessons img {
+    float: left;
+    max-width: 40%;
+    border: 10px solid #2b2b2b;
+}
+
+.lessons p {
+    padding-left: 45%;
+
+}
+
+/*Lessons part ends*/
+
+@media (max-width: 767px) {
+    .nav-pills li {
+        float: none !important;
+        text-align: center;
+    }
 }
 
 
